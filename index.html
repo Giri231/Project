@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Five Sections Website</title>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+  <link rel="stylesheet" href="style.css">
+  
+</head>
+<body>
+    <div class="section-1">
+        <div class="content-box">
+          <div class="left-side">
+            <h1 class="redcol">AWARD WINNING</h1>
+            <h1>DIGITAL MARKETING <br> AGENCY</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. <br> Molestias deserunt mollitia quos <br> dolores ratione a aut eius! Quasi consequatur obcaecati unde, <br> aut provident architecto ad necessitatibus.</p>
+            <button class="contact-button" onclick="openPopup()">Contact Us</button>
+          </div>
+          <div class="right-side">
+            <img src="Screenshot 2024-06-01 174514.png" alt="Vertical Image">
+          </div>
+        </div>
+      </div>
+      
+    
+      <div class="modal" id="popup-modal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title">Talk to Us</h1>
+              <button type="button" class="close" onclick="closePopup()">&times;</button>
+            </div>
+            <div class="modal-body">
+              <form action="https://getform.io/f/pbygxoyb" method="POST">
+                <div class="form-group">
+                  <input type="email" class="form-control" id="email" name="email" placeholder="Email" required>
+                </div>
+                <div class="form-row">
+                  <div class="col">
+                    <div class="form-group">
+                      <input type="text" class="form-control" id="fname" name="fname" placeholder="First Name" required>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="form-group">
+                      <input type="text" class="form-control" id="lname" name="lname" placeholder="Last Name" required>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-check">
+                  <input type="checkbox" class="form-check-input" id="acknowledge" name="acknowledge">
+                  <label class="form-check-label" for="acknowledge">I agree to Fyle's terms and conditions, and provide consent to send me communication.</label>
+                </div>
+                <div class="modal-footer">
+                  <button type="submit" class="contact-button2">Contact Us</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+ 
+  <div class="section-4">
+   
+      <div class="left-section">
+        <h6 class="redcol">WHY CHOOSE US </h6>
+        <p class="bold-text ">WHY ARE WE BEST </p>
+        <div class="boxes-container" id="boxes-container">
+        </div>
+      </div>
+      <div class="right-section">
+        <h6 class="redcol">WHY CHOOSE US </h6>
+        <p class="bold-text ">WHY ARE WE BEST </p>
+        <div class="box-container">
+        <div class=" left-side">
+          <img id="dynamic-image" src="Screenshot 2024-06-01 215217.png" alt="Dynamic Image" class="img-fluid">
+        </div>
+        <div class="right-side">
+          <div id="content-container">
+          </div>
+        </div>
+      </div>
+    </div>
+ 
+  </div>
+
+  <div class="section-3">
+    <div class="content-box">
+      <div class="top-section">
+        <h6 class="redcol">EXPERTS GROWTHS</h6>
+        <p class="bold-text ">OUR COMPANY GROWTH</p>
+      </div>
+      <div class="bottom-section" id="card-container">
+      </div>
+    </div>
+  </div>
+
+  <div class="section-5">
+    <div class="content-box">
+      <div class ="top-section">
+        <h6 class="redcol">EXPERTS GROWTHS</h6>
+        <p class="bold-text ">OUR COMPANY GROWTH</p>
+      <div  class="sm-text ">  
+        <h5>Jannat Tumpa The standard chunk <br>of Lorem Ipsum used since the 1500s is reproduced below for those<br> interested. Sections Bonorum et Malorum original.</h5></div>
+      <img src="image.png" >
+    </div>
+      </div>
+    </div>
+ 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+  
+  <script>
+    $(document).ready(function() {
+      $("#vertical-slider").owlCarousel({
+        items: 1,
+        loop: true,
+        autoplay: true,
+        autoplayTimeout: 3000,
+        nav: true,
+        dots: true,
+        autoHeight: true
+      });
+    });
+
+    const cardData = [
+  { icon: 'heart.png', number: '199 +', text: 'Staticified Customers' },
+  { icon: 'clock.png', number: '1591 +', text: 'Days of Operation' },
+  { icon: 'check.png', number: '283 +', text: 'Complete Project' },
+  { icon: 'trophy3.png', number: '75 +', text: 'Win Awards ' }
+];
+
+
+const createCardHTML = (card) => `
+  <div class="card">
+    <div class="card-icon"><img src="${card.icon}" alt="Icon ${card.number}"></div>
+    <div class="card-number">${card.number}</div>
+    <div class="card-text">${card.text}</div>
+  </div>
+`;
+
+const cardContainer = document.getElementById('card-container');
+
+
+const cardElements = cardData.map(createCardHTML);
+
+
+cardContainer.innerHTML = cardElements.join('');
+
+
+const boxData = [
+  { icon: 'Screenshot 2024-06-01 210533.png', title: 'Clarified Vision and Target', text: 'Lorem ndjkndeijfiejfiejjef' },
+  { icon: 'Screenshot 2024-06-01 210548.png', title: 'High Perfomance ', text: 'lorem ndkwndno jnwknknd knddknd' },
+  { icon: 'Screenshot 2024-06-01 210603.png', title: 'Maintain Security', text: 'Lorem njndjndede fefef' },
+  { icon: 'Screenshot 2024-06-01 210623.png', title: 'Better Strategy and Quality', text: 'nkenf fef  ndkiwndndd' }
+];
+
+
+function createBox(icon, title, text) {
+  const box = document.createElement('div');
+  box.classList.add('box');
+  box.innerHTML = `
+    <img src="${icon}" alt="Icon">
+    <h5>${title}</h5>
+    <p>${text}</p>
+  `;
+  return box;
+}
+
+function populateBoxes() {
+  const boxesContainer = document.getElementById('boxes-container');
+  if (boxesContainer) {
+    boxData.forEach(item => {
+      const box = createBox(item.icon, item.title, item.text);
+      boxesContainer.appendChild(box);
+    });
+  }
+}
+
+populateBoxes();
+
+
+function openPopup() {
+    var modal = document.getElementById("popup-modal");
+    modal.style.display = "block";
+  }
+  
+
+  function closePopup() {
+    var modal = document.getElementById("popup-modal");
+    modal.style.display = "none";
+  }
+  
+
+  
+
+  const contentData = [
+      { 
+        title: "Genderless Kei – Japan’s Hot", 
+        description: "Given that we defied all odds to exist, that begs the most important question that philosophers, theologians, and countless others have attempted to answer. We might even consider this The Ultimate Question: What’s the purpose of life?", 
+        image: "Screenshot 2024-06-01 215208.png" 
+      },
+      { 
+        title: "Better Strategy & Quality", 
+        description: "On a related note, how are we to live in a way that fulfills our purpose? Another way to think of this is:", 
+        image: "Screenshot 2024-06-01 215217.png" 
+      },
+      { 
+        title: "Genderless Kei – Japan’s Hot", 
+        description: " how are we supposed to spend our winnings", 
+        image: "Screenshot 2024-06-01 215208.png" 
+      }
+    ];
+
+    let currentIndex = 0;
+
+    function renderContent() {
+      const contentContainer = document.getElementById('content-container');
+      contentContainer.innerHTML = '';
+
+      contentData.map((data, index) => {
+        const contentDiv = document.createElement('div');
+        contentDiv.classList.add('dynamic-content');
+        contentDiv.dataset.index = index;
+        contentDiv.innerHTML = `
+          <h4>${data.title}</h4>
+          <p>${data.description}</h6>
+        `;
+        contentDiv.addEventListener('click', () => updateImage(index)); 
+        contentContainer.appendChild(contentDiv);
+      });
+    }
+
+ 
+    function updateImage(index) {
+      const imageElement = document.getElementById('dynamic-image');
+      imageElement.src = contentData[index].image;
+      const contentContainer = document.getElementById('content-container');
+      Array.from(contentContainer.children).forEach((child, idx) => {
+        if (idx === index) {
+          child.classList.add('highlight');
+        } else {
+          child.classList.remove('highlight');
+        }
+      });
+    }
+
+    function startAutoChange() {
+      setInterval(() => {
+        currentIndex = (currentIndex + 1) % contentData.length;
+        updateImage(currentIndex);
+      }, 3000); 
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      renderContent();
+      startAutoChange();
+    });
+
+    function submitForm() {
+      const email = document.getElementById('email').value;
+      const fname = document.getElementById('fname').value;
+      const lname = document.getElementById('lname').value;
+      const acknowledge = document.getElementById('acknowledge').checked;
+
+      fetch('https://getform.io/f/pbygxoyb', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ email, fname, lname, acknowledge })
+      }).then(response => {
+        if (response.ok) {
+          closePopup();
+          alert('Form submitted successfully!');
+        } else {
+          alert('Failed to submit form.');
+        }
+      }).catch(error => {
+        console.error('Error:', error);
+        alert('Error submitting form.');
+      });
+    }
+  </script>
+</body>
+</html>
