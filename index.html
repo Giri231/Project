@@ -63,6 +63,32 @@
         </div>
       </div>
 
+  
+
+
+  <div class="section-2">
+    <div class="content-box">
+      <div class="horizontal-section">
+        <div class="div1">
+          <h5 class="redcol">WHAT WE DO</h5>
+          <p class="parabold">Services provide for you</p>
+        </div>
+        <div class="div2">
+          <h6>Morbi sed lacus nec risus finibus feugiat et <br> fermentum  nibh.  Pellentesque vitae <br>ante at elit fringilla ac at purus, <br>Morbi sed lacus nec risus finibus feugiat et fermentum</h6>
+        </div>
+      </div>
+      <div class="slider-container">
+        <div id="vertical-slider" class="owl-carousel owl-theme">
+          <div class="item"><img src="Screenshot 2024-06-01 215208.png" alt="Image 1"></div>
+          <div class="item"><img src="Screenshot 2024-06-01 215217.png" alt="Image 2"></div>
+          <div class="item"><img src="3@2x.png" alt="Image 3"></div>
+          <div class="item"><img src="Screenshot 2024-06-01 215217.png" alt="Image 4"></div>
+          <div class="item"><img src="Screenshot 2024-06-01 215217.png" alt="Image 5"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
  
   <div class="section-4">
    
@@ -177,7 +203,7 @@ function createBox(icon, title, text) {
 
 function populateBoxes() {
   const boxesContainer = document.getElementById('boxes-container');
-  if (boxesContainer) {
+  if (boxesContainer) { 
     boxData.forEach(item => {
       const box = createBox(item.icon, item.title, item.text);
       boxesContainer.appendChild(box);
@@ -200,7 +226,7 @@ function openPopup() {
   }
   
 
-  
+ 
 
   const contentData = [
       { 
@@ -264,7 +290,6 @@ function openPopup() {
       renderContent();
       startAutoChange();
     });
-
     function submitForm() {
       const email = document.getElementById('email').value;
       const fname = document.getElementById('fname').value;
@@ -289,6 +314,7 @@ function openPopup() {
         alert('Error submitting form.');
       });
     }
+    
   </script>
 </body>
 </html>
